@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSearch"
+            style="@style/TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_padding_default"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/search_icon"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/fontColor"
+            app:startIconTint="@color/fontColor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearch"
+                style="@style/TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_hint"
+                android:inputType="text"
+                android:maxLines="1"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvFilter"
+            style="@style/TextViewBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_padding_default"
+            android:text="@string/order_text"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tilFilter"
+            app:layout_constraintEnd_toStartOf="@id/tilFilter"
+            app:layout_constraintTop_toTopOf="@id/tilFilter" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilFilter"
+            style="@style/TextInputLayoutACTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_padding_default"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/tilSearch">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/actvFilter"
+                style="@style/TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:hint="@string/select_hint"
+                android:inputType="none"
+                android:singleLine="true"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProducts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/common_padding_default"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tilFilter"
+            tools:listitem="@layout/item_product" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLoad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_padding_default"
+            android:fontFamily="@font/rubik_bold"
+            android:text="@string/load_more_text"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_body"
+            android:visibility="gone"
+            app:cornerRadius="@dimen/common_padding_min"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvProducts" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvNoResults"
+            style="@style/TextViewSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_padding_default"
+            android:text="@string/no_results_text"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilSearch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

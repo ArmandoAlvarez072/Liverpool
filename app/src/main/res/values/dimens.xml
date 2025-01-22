@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="common_padding_default">16dp</dimen>
+    <dimen name="common_padding_long">30dp</dimen>
+    <dimen name="corner_radius">15dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+
+    <dimen name="font_size_title">30sp</dimen>
+    <dimen name="font_size_body">16sp</dimen>
+    <dimen name="font_size_subtitle">18sp</dimen>
+    <dimen name="img_size">150dp</dimen>
+    <dimen name="loader_height">60dp</dimen>
+    <dimen name="progress_indicator_height">110dp</dimen>
+    <dimen name="separator_line">2dp</dimen>
+    <dimen name="edit_text_stroke_width">2dp</dimen>
+
+</resources>
